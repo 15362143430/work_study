@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				console.log(document.querySelectorAll("#box1~div").length)
+				console.log(document.querySelectorAll("#box1+div").length)
+				console.log(document.querySelectorAll("#box1>div").length)
+				
+				console.log(document.querySelectorAll("input[type='checkbox']:checked"))
+				
+				console.log(document.querySelectorAll("a[href^='http']"))
+				console.log(document.querySelectorAll("a[href^='https']"))
+				console.log(document.querySelectorAll("a[href$='cn']"))
+				console.log(document.querySelectorAll("a[href$='com']"))
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box1">
+			
+		</div>
+		<div id="">
+			
+		</div>
+		<div id="">
+			
+		</div>
+		<div id="">
+			
+		</div>
+		
+		<input type="checkbox" checked="checked" name="" id="" value="" />
+		<input type="checkbox" checked="checked" name="" id="" value="" />
+		<input type="checkbox" name="" id="" value="" />
+		
+		
+		<a href="http://baidu.com">百度http</a>
+		<a href="https://baidu.com">百度https</a>
+		<a href="https://baidu.cn">百度https+cn</a>
+	</body>
+</html>

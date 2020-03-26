@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			async function time(){
+				let num = Math.random()*9+1;
+				if(num<=5){
+					return "hehehe";
+				}else{
+					throw new Error("err");
+				}
+			}
+			for(let i =0;i<5;i++){
+				console.log(time());
+			}
+			
+			async function time2(){
+				console.log(66)
+			}
+			console.log(time2())
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			Function.prototype.myCall = function(context) {
+				if(typeof this !== 'function'){
+					throw new Error('不是函数')
+				}
+				var context = context || window;
+				//				console.log(arguments)
+				context.fn = this;
+				arguments[1] ? context.fn(...Array.prototype.slice.apply(arguments, [1])) : context.fn();
+				delete context.fn;
+			}
+
+			Function.prototype.myApply = function(context) {
+				if(typeof this !== 'function'){
+					throw new Error('不是函数')
+				}
+				var context = context || window;
+				//				console.log(arguments)
+				context.fn = this;
+				arguments[1] ?context.fn(...arguments[1]):context.fn();
+				delete context.fn;
+			}
+
+			let obj = {
+				value: '1'
+			};
+
+			function sayValue(name, age) {
+				console.log(name);
+				console.log(age);
+				console.log(this.value);
+			}
+
+			sayValue.myCall(obj, '林三心', 20);
+			sayValue.myApply(obj, ['林三心', 20]);
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

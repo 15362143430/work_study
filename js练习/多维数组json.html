@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			let arr = [
+				[1, 2],
+				[3, 4],
+				[5, 6]
+			];
+			let arr_obj = [{
+				id: 1,
+				hobbies: {
+					sport: '篮球',
+					sing: '爱的供养'
+				}
+			}, {
+				id: 2,
+				hobbies: {
+					sport: '篮球',
+					sing: '爱的供养'
+				}
+			}]
+			let arr_json = JSON.stringify(arr_obj);
+			console.log(arr_json);
+			console.log(typeof arr_json);
+			console.log(JSON.parse(arr_json))
+			
+			
+			$.ajax({
+				type:"get",
+				url:"",
+				async:false
+			});
+			
+			console.log(1)
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

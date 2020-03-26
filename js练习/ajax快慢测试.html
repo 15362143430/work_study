@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			let a = $.get("http://localhost:3000/api");
+			let b = $.get("http://localhost:3000/test");
+			a.done(res=>{
+				console.log(res);
+				
+			})
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

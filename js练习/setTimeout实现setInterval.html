@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			(function(){
+				console.log(arguments.callee)
+			})()
+			var i = 0 ;
+			setTimeout(function(){
+				console.log(i++)
+				setTimeout(arguments.callee,1)
+			},1)
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

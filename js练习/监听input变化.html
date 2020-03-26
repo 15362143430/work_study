@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.onload = function() {
+					$("#in").on(" input propertychange", function() {
+								console.log($(this).val());
+						})
+					
+					$("#btn").click(()=>{
+						$("#in").val("asdasdasdasd")
+					})
+
+							}
+		</script>
+	</head>
+
+	<body>
+		<input type="text" name="in" id="in" value="sss" />
+		<input type="button" name="btn" id="btn" value="点击我" />
+	</body>
+
+</html>

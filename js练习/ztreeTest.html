@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="js/zTree_v3/css/zTreeStyle/zTreeStyle.css" />
+		<script src="js/zTree_v3/js/jquery-1.4.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/zTree_v3/js/jquery.ztree.all.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+
+		<div>
+			<ul id="regionZTree" class="ztree"></ul>
+		</div>
+		<script type="text/javascript">
+			var setting = {
+				view: {
+					dblClickExpand: false, //双击节点时，是否自动展开父节点的标识
+					showLine: true, //是否显示节点之间的连线
+					fontCss: {
+						'color': 'black',
+						'font-weight': 'bold'
+					}, //字体样式函数
+					selectedMulti: true //设置是否允许同时选中多个节点
+				},
+				check: {
+					//chkboxType: { "Y": "ps", "N": "ps" },
+					chkboxType: {
+						"Y": "",
+						"N": ""
+					},
+					chkStyle: "checkbox", //复选框类型
+					enable: true //每个节点上是否显示 CheckBox
+				},
+				edit: {
+					enable: true,
+					editNameSelectAll: true,
+					showRemoveBtn: true,
+					showRenameBtn: true,
+					removeTitle: "remove",
+					renameTitle: "rename"
+				},
+				data: {
+					simpleData: { //简单数据模式
+						enable: true,
+						idKey: "id",
+						pIdKey: "IPARENTID",
+						rootPId: null
+					}
+				},
+				callback: {
+					beforeExpand: zTreeBeforeExpand // 用于捕获父节点展开之前的事件回调函数，并且根据返回值确定是否允许展开操作
+				}
+			};
+			zTreeObj = $.fn.zTree.init($("#regionZTree"), setting, dominZTree);
+		</script>
+	</body>
+
+</html>

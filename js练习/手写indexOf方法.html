@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			(function(){
+				
+				function ind(S){
+					var lenT = this.length;
+					var res = -1;
+					var lenS = S.length;
+					console.log(lenT,lenS)
+					if(lenS>lenT){return -1};
+					
+					for(let i = 0;i<lenT-lenS+1;i++){
+						if(this.substr(i,lenS) == S){
+							res = i;
+							break;
+						}else{
+							res = -1;
+						}
+					}
+					
+					return res;
+				}
+				
+				String.prototype.ind = ind;
+			})()
+			
+			var T = "asdasdasdsdad";
+			var S = "sdad";
+			console.log(T.ind(S));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

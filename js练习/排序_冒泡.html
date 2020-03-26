@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//空间复杂度：因为只涉及到交换，只需要常量级的临时空间，所以空间复杂度为O(1)
+			//时间复杂度：最好O(n)，最坏O(n²)，平均O(n²)
+			//使用场景：数据量小于1000
+			//稳定性：稳定
+			Array.prototype.bubbleSort = function() {
+				var length = this.length;
+				if(length < 2) return this;
+				for(let i = 0; i < length; i++) {
+					for(let j = 0; j < length - i; j++) {
+						if(this[j] > this[j + 1]) {
+							var tmp = this[j];
+							this[j] = this[j + 1];
+							this[j + 1] = tmp;
+						}
+					}
+				}
+				return this;
+			}
+			let arr = [3, 3, 2, 2, 5, 5, 6, 4, 1, 123, 123];
+			console.log(arr.bubbleSort());
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

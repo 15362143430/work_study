@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			let a = [1,2,3];
+			let b = null;
+			let c = function(){
+				
+			};
+			
+			console.log(typeof a)
+			console.log(a.toString());
+			console.log(Object.prototype.toString.call(a));
+			console.log(Array.isArray(a));
+			console.log(a instanceof Array);
+			
+			console.log(typeof b);
+			console.log(Object.prototype.toString.call(b));
+			console.log(b instanceof Object);
+			
+			console.log(typeof c);
+			console.log(c.toString());
+			console.log(Object.prototype.toString.call(c));
+			console.log(c instanceof Function);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

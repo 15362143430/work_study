@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function a() {
+				return new Promise((resolve, reject) => {
+					$.ajax("http://localhost:3000/api").done((res) => {
+						resolve(res)
+					})
+				})
+			}
+
+			function b() {
+				return new Promise((resolve, reject) => {
+					$.ajax("http://localhost:3000/test").done((res) => {
+						resolve(res)
+					})
+				})
+			}
+			
+			async function c(){
+				let aj1 = await a();
+				console.log(aj1);
+				let aj2 = await b();
+				console.log(aj2);
+				return aj2; 
+			}
+			c().then(res=>{
+				console.log(res);
+			})
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

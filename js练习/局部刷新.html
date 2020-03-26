@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.onload = function() {
+				document.getElementById("btn").onclick = function() {
+					$("#box1").load(location.href + " #box1");
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="box1">
+1211
+		</div>
+
+		<div id="box2">
+12
+		</div>
+		<button id="btn">刷新box1
+		</button>
+	</body>
+
+</html>

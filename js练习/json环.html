@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var obj = {
+				f: {
+					name: 'fff',
+					age: 20,
+					call: null
+				}
+			}
+			obj.f.call = obj.f;
+			JSON.stringify(obj);
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var p = new Promise((resolve, reject) => {
+				reject("error")
+			})
+
+			p.catch(err => {
+				console.log(err)
+			})
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

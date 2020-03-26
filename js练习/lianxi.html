@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#box").click(function(){
+					console.log(666)
+					$(this).css("color","white");
+					var a = Math.random();
+					$(this).html(a);
+				})
+				console.log($("#box"));
+				console.log(document.getElementById("box"))
+			})
+		</script>
+		<style type="text/css" class="hehe">
+			#box{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+	</body>
+</html>

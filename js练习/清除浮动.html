@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.f-box {
+				float: left;
+				width: 100px;
+				height: 100px;
+				background: yellow;
+			}
+			
+			#box {
+				border: 1px solid black;
+			}
+			
+			.clearfix:after {
+				content: '.';
+				clear: both;
+				display: block;
+				height: 0;
+				overflow: hidden;
+				visibility: hidden;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="box" class="clearfix">
+			<div class="f-box">
+
+			</div>
+			<div class="f-box">
+
+			</div>
+			<div>
+				.
+			</div>
+		</div>
+	</body>
+
+</html>

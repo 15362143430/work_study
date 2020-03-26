@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+  .parent{
+    height: 500px;
+    border:1px solid #222;  
+  }
+  .stable{
+    float: left;
+    height: 460px;
+    width: 200px;
+    border:1px solid  #ccc;  
+    margin:20px;  
+  }
+  .change{
+    height: 460px;
+    border:1px solid #ff4400;  
+    margin:20px 20px 20px 260px;  
+  }
+</style>
+</head>
+<body>
+  <div class="parent">
+    <div class="stable">stable 固定宽度200px</div>
+    <div class="change">changeable 可变宽度</div>
+  </div>
+</body>
+</html>
+	<!--<!DOCTYPE html>  
+<html>  
+<head>  
+<meta charset="utf-8">  
+<style>  
+.parent{
+  height:500px;  
+  border:1px solid #222;  
+  display:flex;/*设为伸缩容器*/  
+  flex-flow:row;/*伸缩项目单行排列  */
+}  
+.stable{  
+  width:100px;/*固定宽度*/  
+  border:1px solid  #ccc;  
+  margin:20px;  
+}  
+.change{  
+  /*flex:1;这里设置为占比1，填充满剩余空间*/  
+  /*width: 100%;*/
+ /*flex: 1;*/
+  border:1px solid #ff4400;  
+  margin:20px;  
+}  
+</style>  
+</head>  
+<body>  
+  <div class="parent">  
+    <div class="stable">stable 固定宽度100px</div>  
+    <div class="change">changeable 可变宽度</div>  
+  </div>  
+</body>  
+</html>-->

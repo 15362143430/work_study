@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var  arr  =   [
+
+				   {
+					name: '小米1',
+					 value:  1,
+					  type:  2,
+					 date:   '2018-06-07T08:00:01.589Z' 
+				},
+
+				    {
+					name: '锤子T1',
+					 value:  1,
+					 type:  2,
+					 date:   '2018-06-07T08:10:01.589Z' 
+				},
+
+				    {
+					name: '小米2',
+					 value:  1,
+					 type:  4,
+					 date:   '2018-06-07T20:00:01.589Z' 
+				},
+
+				    {
+					name: '小米2',
+					 value:  4,
+					 type:  4,
+					 date:   '2018-06-07T20:10:21.189Z' 
+				},
+
+				    {
+					name: '小米4',
+					 value:  1,
+					 type:  4,
+					 date:   '2018-06-07T08:00:01.560Z' 
+				},
+
+				    {
+					name: '小米4',
+					 value:  2,
+					 type:  4,
+					 date:   '2018-06-07T08:10:31.584Z' 
+				},
+
+				    {
+					name: '小米6',
+					 value:  1,
+					 type:  3,
+					 date:   '2018-06-07T08:00:01.589Z' 
+				},
+
+				    {
+					name: '小米5s',
+					value:  1,
+					 type:  4,
+					 date:   '2018-06-07T08:00:01.589Z' 
+				},
+
+				    {
+					name: '锤子T2',
+					 value:  1,
+					 type:  4,
+					 date:   '2018-06-07T08:00:01.589Z' 
+				},
+
+				    {
+					name: '锤子T1',
+					 value:  4,
+					 type:  4,
+					 date:   '2018-06-07T08:06:01.589Z' 
+				},
+
+				    {
+					name: '魅蓝note5',
+					 value:  1,
+					 type:  4,
+					 date:   '2018-06-07T08:00:01.589Z' 
+				},
+
+				    {
+					name: '魅蓝note2',
+					 value:  5,
+					 type:  4,
+					 date:   '2018-06-02T08:07:01.589Z' 
+				},
+
+				    {
+					name: '魅蓝note2',
+					 value:  6,
+					 type:  4,
+					 date:   '2018-06-07T08:00:01.589Z' 
+				},
+
+				    {
+					name: '魅蓝note3',
+					 value:  1,
+					 type:  4,
+					 date:   '2018-06-05T08:00:01.589Z' 
+				},
+
+				    {
+					name: '魅蓝note',
+					 value:  1,
+					 type:  4,
+					 date:   '2018-06-07T08:00:01.589Z' 
+				},
+
+				    {
+					name: 'oppor9',
+					 value:  7,
+					 type:  4,
+					 date:   '2018-06-04T08:04:01.588Z' 
+				},
+
+				    {
+					name: '华为p9',
+					 value:  1,
+					 type:  4,
+					 date:   '2018-06-02T08:00:01.577Z' 
+				},
+
+				    {
+					name: '华为p9',
+					 value:  2,
+					 type:  4,
+					 date:   '2018-06-07T08:00:01.110Z' 
+				},
+
+				    {
+					name: '华为p10',
+					 value:  1,
+					 type:  1,
+					 date:   '2018-06-07T08:00:01.534Z' 
+				}
+
+			];
+			
+			var type4Arr = [];
+			var reg = /-/;
+			for(var i = 0;i<arr.length;i++){
+				if(arr[i].type = 4){
+					arr[i].date = arr[i].date.replace(reg,"年").replace(reg,"月").substring(0,10);
+					type4Arr.push(arr[i])
+				}
+			}
+			console.log(type4Arr);
+			var phone = {};
+			for(var i = 0;i<type4Arr.length;i++){
+				if(phone[type4Arr[i].name]){
+					phone[type4Arr[i].name] += type4Arr[i].value;
+				}else{
+					phone[type4Arr[i].name] = type4Arr[i].value;
+				}
+			}
+			console.log(phone)
+			
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

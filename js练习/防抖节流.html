@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box {
+				width: 1000px;
+				height: 500px;
+				background: #ccc;
+				font-size: 40px;
+				text-align: center;
+				line-height: 500px;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div id="box"></div>
+
+		<script>
+			let timeout;
+
+			function debounce(func, delay) {
+				return function() {
+					clearTimeout(timeout) // 如果持续触发，那么就清除定时器，定时器的回调就不会执行。
+					timeout = setTimeout(() => {
+						func.apply(this, arguments)
+						//						func(e);
+					}, delay)
+				}
+			}
+			const box = document.getElementById('box')
+			box.onmousemove = debounce(function(e) {
+				box.innerHTML = `${e.clientX}, ${e.clientY}`
+			}, 100)
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+//			for(let i =0;i<10;i++){
+//				setTimeout(()=>{
+//					console.log("haha");
+//				},2000)
+//			}
+			
+			async function dingshi(){
+				for(let i = 0 ; i < 10 ; i++){
+					await new Promise((a,b)=>{
+						setTimeout(()=>{
+						console.log("haha"+i);
+						a();
+					},20)
+							
+					})
+				}
+			}
+			dingshi().then((i)=>{
+				console.log();
+			});
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

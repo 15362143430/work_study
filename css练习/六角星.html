@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#star {
+				width: 0px;
+				height: 0px;
+				border-bottom: 100px solid red;
+				/*rgba(244,244,0,0.4);*/
+				border-left: 50px solid transparent;
+				border-right: 50px solid transparent;
+				margin: 50px auto;
+				position: relative;
+			}
+			
+			#star:after {
+				content: " ";
+				width: 0px;
+				height: 0px;
+				border-top: 100px solid red;
+				/*rgba(0,244,250,0.6);*/
+				border-left: 50px solid transparent;
+				border-right: 50px solid transparent;
+				position: absolute;
+				top: 50px;
+				left: -50px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="star"></div>
+	</body>
+
+</html>

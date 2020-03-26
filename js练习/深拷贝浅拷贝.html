@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function() {
+				// 深拷贝
+				function DeepClone(obj) {
+					if(obj === null || typeof obj !== 'object') return obj;
+					var cpObj = obj instanceof Array ? [] : {};
+					for(var key in obj) cpObj[key] = DeepClone(obj[key]);
+					return cpObj;
+				}
+				var a = {
+					name: "linrui",
+					age: 15,
+					hobbies: {
+						one: "hehe",
+						two: "heihei"
+					}
+				};
+
+				var fun = DeepClone(a);
+				var jso = JSON.parse(JSON.stringify(a))
+				var jiegou = { ...a
+				}
+
+				a.hobbies.one = "llllll"
+				console.log(fun) //不会影响，深拷贝
+				console.log(jso) //不会影响，深拷贝
+				console.log(jiegou) //影响，浅拷贝
+			}
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

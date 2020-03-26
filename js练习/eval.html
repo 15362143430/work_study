@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var a = "console.log(66666)";
+			console.time();
+			eval(a);
+			console.timeEnd()
+			console.time();
+			console.log(a);
+			console.timeEnd();
+			
+			
+			var b = {hehe:123,xixi:231};
+			console.log(b.toString());
+			
+			var c = [3,4,5];
+			console.log(c.toString())
+			
+			function d(){};
+			var e = function(){}
+			console.log(typeof d)
+			console.log(d instanceof Function);
+			console.log(d.toString())
+			
+			console.log(typeof e)
+			console.log(e instanceof Function);
+			console.log(e.toString())
+		</script>
+		<style type="text/css">
+			#he{
+				background: red;
+				border: none;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" name="" id="he" value="hehehhe" />
+	</body>
+</html>

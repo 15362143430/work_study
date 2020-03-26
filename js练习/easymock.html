@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>阿斯达四大所</title>
+		<script src="../js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+//			$.get("https://www.easy-mock.com/mock/5e145489d49ea764822553cd/example/api").done((res)=>{
+//				console.log(res)
+//			})	
+			window.onload = function() {
+				$.get("http://localhost:3000/test").done((res)=>{
+					document.title = res;	
+				})
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" id="btn" value="点我点我" />
+	</body>
+</html>

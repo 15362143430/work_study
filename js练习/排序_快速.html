@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			Array.prototype.quickSort = function() {
+				const l = this.length;
+				if(l < 2) return this;
+				const basic = this[0],
+					left = [],
+					right = [];
+				for(let i = 1; i < l; i++) {
+					const iv = this[i];
+					iv >= basic && right.push(iv);
+					iv < basic && left.push(iv);
+				}
+				return left.quickSort().concat(basic, right.quickSort());
+			}
+			let arr = [2, 5, 3, 8, 3, 0, 3, 7, 4];
+			console.log(arr.quickSort());
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>
