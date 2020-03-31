@@ -7,10 +7,16 @@
 		<script type="text/javascript">
 			window.onload = function() {
 				// 深拷贝
-				function DeepClone(obj) {
+//				function DeepClone(obj) {
+//					if(obj === null || typeof obj !== 'object') return obj;
+//					var cpObj = obj instanceof Array ? [] : {};
+//					for(var key in obj) cpObj[key] = DeepClone(obj[key]);
+//					return cpObj;
+//				}
+				function DeepClone(obj){
 					if(obj === null || typeof obj !== 'object') return obj;
-					var cpObj = obj instanceof Array ? [] : {};
-					for(var key in obj) cpObj[key] = DeepClone(obj[key]);
+					var cpObj = obj instanceof Array?[] : {};
+					for(let key in obj) cpObj[key] = DeepClone(obj[key]);
 					return cpObj;
 				}
 				var a = {
@@ -31,6 +37,8 @@
 				console.log(fun) //不会影响，深拷贝
 				console.log(jso) //不会影响，深拷贝
 				console.log(jiegou) //影响，浅拷贝
+				
+//				console.log(Object.keys([1,2,3]))
 			}
 		</script>
 	</head>

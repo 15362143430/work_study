@@ -2,21 +2,21 @@
 <html>
 
 	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<script type="text/javascript">
-			Function.prototype.myCall = function(context) {
-				if(typeof this !== 'function'){
-					throw new Error('不是函数')
-				}
-				var context = context || window;
+		<meta charset="UTFntext = context || window;
 				//				console.log(arguments)
 				context.fn = this;
 				arguments[1] ? context.fn(...Array.prototype.slice.apply(arguments, [1])) : context.fn();
 				delete context.fn;
 			}
 
-			Function.prototype.myApply = function(context) {
+			Function.pro-8">
+		<title></title>
+		<script type="text/javascript">
+			Function.prototype.myCall = function(context) {
+				if(typeof this !== 'function'){
+					throw new Error('不是函数')
+				}
+				var cototype.myApply = function(context) {
 				if(typeof this !== 'function'){
 					throw new Error('不是函数')
 				}

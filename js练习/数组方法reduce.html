@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			let arr = [1,2,3,3,2,3,45,21];
+			let arr2 = arr.reduce((prev,cur)=>{
+				prev.indexOf(cur) === -1 && prev.push(cur);
+				return prev;
+			},[]);
+			console.log(arr2);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
