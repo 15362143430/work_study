@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+//			给定一个整数数组和一个目标值， 找出数组中和为目标值的两个数。 你可以假设每个输入只对应一种答案， 且同样的元素不能被重复利用， 例如：
+//
+//			给定 nums = [2, 7, 11, 15], target = 9
+//			因为 nums[0] + nums[1] = 2 + 7 = 9
+//			所以返回[0, 1]
+
+			function two_num(nums,target){
+				for(let i =0;0<nums.length;i++){
+					for(let j = 1+1;j<nums.length;j++){
+						if(nums[i]+nums[j] === target) return console.log([i,j]);
+					}
+				}
+			}
+			
+			two_num([1,2,3,4,2,1],7);
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>
