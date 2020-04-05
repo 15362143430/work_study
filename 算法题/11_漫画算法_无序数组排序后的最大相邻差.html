@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//			有一个无序整型数组，如何求出该数组排序后的任意两个相邻元素的最大差 值？
+			//			要求时间和空间复杂度尽可能低。
+
+			let arr = [5, 3, 4, 2, 2, 2, 5, 6, 90, 1000, 1, 10000];
+			//			先用计数排序的第一步(不需要排序),然后获取相隔最多0的,就是最大差
+			function countComputed(arr) {
+				//				let max = arr[0];
+				//				let min = arr[0];
+				//				for(let i of arr) {
+				//					if(i > max) {
+				//						max = i;
+				//					}
+				//					if(i < min) {
+				//						min = i;
+				//					}
+				//				}
+				let max = Math.max(...arr);
+				let min = Math.min(...arr);
+
+				let countArr = new Array(max - min + 1).fill(0);
+				for(let i of arr) {
+					countArr[i - min]++
+				}
+				//				console.log(countArr);
+				let maxCount = 0;
+				let beitai_maxCount = 0;
+				for(let i of countArr) {
+					i === 0 ? beitai_maxCount++ : (beitai_maxCount = 0);
+					if(beitai_maxCount > maxCount) {
+						maxCount = beitai_maxCount;
+					}
+				}
+				console.log(maxCount + 1)
+			}
+			countComputed(arr);
+
+			//			桶排序（待做）
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

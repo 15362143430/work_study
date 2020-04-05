@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function arrayStack() {
+				this.stack = [];
+				this.beitaiStack = [];
+				//压栈操作
+				this.push = function(element) {
+					//空数组也是返回true
+					if(this.stack.every(item => item > element)) {
+						this.beitaiStack.push(element);
+					}
+					this.stack.push(element);
+				}
+				//获取栈顶元素
+				this.top = function() {
+					return this.stack[this.length() - 1];
+				}
+				//退栈操作
+				this.pop = function() {
+					if(this.stack[this.length() - 1] === this.beitaiStack[this.beitaiStack.length - 1]) {
+						this.beitaiStack.pop();
+					}
+					this.stack.pop();
+				}
+				//获取栈长
+				this.length = function() {
+					return this.stack.length;
+				}
+				//清空栈
+				this.clear = function() {
+					this.stack = [];
+					return true;
+				}
+				//字符串展示栈
+				this.toString = function() {
+					return this.stack.toString();
+				}
+
+				//获取最小值
+				this.getMin = function() {
+					return this.beitaiStack[this.beitaiStack.length - 1];
+				}
+
+			}
+
+			//			创建两个栈,一个入队一个出队
+			function stackList() {
+				this.stack1 = new arrayStack();
+				this.stack2 = new arrayStack();
+				this.push = function(element) {
+					this.stack1.push(element)
+				};
+				this.shift = function() {
+					while(this.stack1.length() !== 0) {
+						this.stack2.push(this.stack1.top());
+						this.stack1.pop();
+					}
+					this.stack2.pop();
+				}
+				this.toString = function() {
+					while(this.stack2.length() !== 0) {
+						this.stack1.push(this.stack2.top());
+						this.stack2.pop();
+					}
+					return this.stack1.stack;
+				}
+			}
+
+			let ListbyStack = new stackList();
+			ListbyStack.push(2);
+			ListbyStack.push(2);
+			ListbyStack.push(2);
+			ListbyStack.push(2);
+			ListbyStack.shift();
+			ListbyStack.push(3);
+			console.log(ListbyStack.toString());
+			console.log(ListbyStack);</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

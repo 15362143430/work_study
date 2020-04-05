@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			let arr = [2, 5, 2, 6, 8, 9, 3, 2, 3, 4, 6, 3, 6, 2, 2];
+
+			function countSort(arr) {
+				//				获取数组最大值
+				let max = arr[0];
+				let min = arr[0];
+				for(let i = 0; i < arr.length; i++) {
+					if(arr[i] > max) {
+						max = arr[i];
+					}
+					if(arr[i] < min) {
+						min = arr[i];
+					}
+				}
+
+				//				根据数列最大值确定统计数组的长度
+				let countArr = new Array(max - min + 1).fill(0);
+
+				//				遍历数列，填充统计数组
+				for(let i of arr) {
+					countArr[i-min]++;
+				}
+				console.log(countArr)
+
+				//				遍历统计数组，输出结果
+				let lastArr = [];
+				for(let i = 0; i < countArr.length; i++) {
+					for(let j = 0; j < countArr[i-min]; j++) {
+						lastArr.push(i);
+					}
+				}
+
+				console.log(lastArr)
+
+			}
+
+			countSort(arr);
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

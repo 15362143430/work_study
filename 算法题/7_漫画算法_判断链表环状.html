@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function Node(element) {
+				this.element = element;
+				this.next = null;
+			}
+
+			function LinkedList() {
+				this.head = new Node(1);
+				this.find = find;
+				this.remove = remove;
+				this.insert = insert;
+				this.append = append;
+				this.prev = prev;
+			}
+
+			function find(item) {
+				let current = this.head;
+				while(current.element !== item) {
+					current = current.next;
+				}
+				return current;
+			}
+
+			function insert(newElement, item) {
+				let itemNode = this.find(item);
+				let newNode = new Node(newElement);
+				newNode.next = itemNode.next;
+				itemNode.next = newNode;
+			}
+
+			function append(newElement) {
+				let newNode = new Node(newElement);
+				let current = this.head;
+				while(current.next) {
+					current = current.next;
+				}
+				current.next = newNode;
+			}
+
+			function remove(item) {
+				let current = this.head;
+				let prev = this.prev(item);
+				prev.next = prev.next.next ? prev.next.next : null;
+			}
+
+			function prev(item) {
+				let prev;
+				let current = this.head;
+				while(current.element !== item) {
+					prev = current;
+					current = current.next;
+				}
+				return prev;
+			}
+
+			let list = new LinkedList();
+			list.append(2);
+			list.append(3);
+			list.append(4);
+			list.append(5);
+			list.insert(7, 1);
+			list.remove(7);
+			list.find(5).next = list.find(3);
+			console.log(list);
+			//			方法1： 首先从头节点开始，依次遍历单链表中的每一个节点。每遍历一个新节点，就 从头检查新节点之前的所有节点，
+			//			用新节点和此节点之前所有节点依次做比较。 如 果发现新节点和之前的某个节点相同， 则说明该节点被遍历过两次，
+			//			链表有环； 如 果之前的所有节点中不存在与新节点相同的节点， 就继续遍历下一个新节点， 继续 重复刚才的操作。
+
+			//			方法2： 首先创建一个以节点ID为Key的HashSet集合，用来存储曾经遍历过的节点。
+			//			然 后同样从头节点开始，依次遍历单链表中的每一个节点。每遍历一个新节点，
+			//			都用 新节点和HashSet集合中存储的节点进行比较，如果发现HashSet中存在与之相同的 节点ID，
+			//			则说明链表有环，如果HashSet中不存在与新节点相同的节点ID，就把这 个新节点ID存入HashSet中，
+			//			之后进入下一节点，继续重复刚才的操作。
+			let current = list.head;
+			let linkedArr = [];
+			while(current.next) {
+				if(linkedArr.indexOf(current.element) !== -1) {
+					console.log(linkedArr[linkedArr.length - 1]);
+					console.log(current.element);
+					break;
+				} else {
+					linkedArr.push(current.element);
+				}
+				current = current.next;
+			}
+
+			//			方法3： 首先创建两个指针p1和p2（在Java里就是两个对象引用），让它们同时指向这 个链表的头节点。
+			//			然后开始一个大循环，在循环体中，让指针p1每次向后移动1个节 点，让指针p2每次向后移动2个节点，
+			//			然后比较两个指针指向的节点是否相同。如果 相同，则可以判断出链表有环，如果不同，则继续下一次循环。
+			let p1 = list.head;
+			let p2 = list.head;
+			let length = 0;
+			let flag = 0;
+			while(current.next && p2.next.next){
+				p1 = p1.next;
+				p2 = p2.next.next;
+				if(flag){
+					length++;
+				}
+				if(p1.element === p2.element){
+					console.log('环状');
+					flag = !flag;
+					if(!flag){
+						console.log(length);
+						break;
+					}
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

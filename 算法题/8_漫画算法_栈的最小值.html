@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function arrayStack() {
+				this.stack = [];
+				this.beitaiStack = [];
+				//压栈操作
+				this.push = function(element) {
+					//空数组也是返回true
+					if(this.stack.every(item => item > element)) {
+						this.beitaiStack.push(element);
+					}
+					this.stack.push(element);
+				}
+				//获取栈顶元素
+				this.top = function() {
+					return this.stack[this.length() - 1];
+				}
+				//退栈操作
+				this.pop = function() {
+					if(this.stack[this.length() - 1] === this.beitaiStack[this.beitaiStack.length - 1]) {
+						this.beitaiStack.pop();
+					}
+					this.stack.pop();
+				}
+				//获取栈长
+				this.length = function() {
+					return this.stack.length;
+				}
+				//清空栈
+				this.clear = function() {
+					this.stack = [];
+					return true;
+				}
+				//字符串展示栈
+				this.toString = function() {
+					return this.stack.toString();
+				}
+
+				//获取最小值
+				this.getMin = function() {
+					return this.beitaiStack[this.beitaiStack.length - 1];
+				}
+
+			}
+
+			let stack = new arrayStack();
+			stack.push(6);
+			stack.push(8);
+			stack.push(8);
+			stack.push(8);
+			stack.push(8);
+			stack.push(5);
+			console.log(stack.getMin());
+			stack.pop();
+			console.log(stack);
+			console.log(stack.getMin());
+//			stack.pop();
+//			console.log(stack);
+//			stack.pop();
+//			console.log(stack);
+//			stack.pop();
+//			console.log(stack);
+//			stack.pop();
+//			console.log(stack);
+//			stack.pop();
+//			console.log(stack);
+			//			console.log(stack.top());
+			console.log(stack);
+			//			stack.clear();
+			//			console.log(stack);
+
+			//		实现一个栈，该栈带有出栈（pop）、入栈（push）、取最小元素（getMin）3 个方法。
+			//		要保证这3个方法的时间复杂度都是O(1)。
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

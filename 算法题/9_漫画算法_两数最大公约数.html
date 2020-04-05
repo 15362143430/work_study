@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//			写一段代码，求出两个整数的最大公约数，要尽量优化算法的性能。
+
+			//			辗转相除法， 又名欧几里得算法（Euclidean algorithm），
+			//			该算法的目的 是求出两个正整数的最大公约数。它是已知最古老的算法， 
+			//			其产生时间可追溯至公 元前300年前。 这条算法基于一个定理：两个正整数a和b（a>b），
+			//			它们的最大公约数等于a除 以b的余数c和b之间的最大公约数。 
+			//			例如10和25，25除以10商2余5，
+			//			那么10和25的最大公约数，等同于10和5的最 大公约数。
+			function CommonNum1(num1, num2) {
+				if(num1 === num2) return num1;
+				let minNum = num1 > num2 ? num2 : num1;
+				let remainder = num1 > num2 ? num1 % num2 : num2 % num2;
+				if(remainder === 0) {
+					console.log(minNum);
+				} else {
+					CommonNum1(minNum, remainder);
+				}
+			}
+			CommonNum1(25, 12);
+
+			//			更相减损术，出自中国古代的《九章算术》，也是一种求最大公约数的算法。 古希腊人很聪明，可是我们炎黄子孙也不差。
+			//			它的原理更加简单：两个正整数a和b（a>b），它们的最大公约数等于a-b的差 值c和较小数b的最大公约数。
+			//			例如10和25，25减10的差是15，那么10和25的最大 公约数，等同于10和15的最大公约数。
+			function CommonNum2(num1, num2) {
+				if(num1 === num2) return num1;
+				let minNum = num1 > num2 ? num2 : num1;
+				let difference = num1 > num2 ? num1 - num2 : num2 - num2;
+				if(difference === 0) {
+					console.log(minNum);
+				} else {
+					CommonNum2(minNum, difference);
+				}
+			}
+			CommonNum2(25, 1000);
+
+			//			结合法（待做）
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>
