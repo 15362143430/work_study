@@ -11,9 +11,11 @@
 			function addTwoLongNum(num1, num2) {
 				let arr1 = num1.split('').reverse();
 				let arr2 = num2.split('').reverse();
-				let addArr = new Array(arr2.length > arr1.length ? arr2.length + 1 : arr1.length + 1).fill(0);
-				for(let i = 0; i < arr2.length; i++) {
-					if(i < arr1.length) {
+				let shortlength = arr2.length > arr1.length ? arr1.length : arr2.length;
+				let longlength = arr2.length > arr1.length ? arr2.length : arr1.length;
+				let addArr = new Array(longlength+1).fill(0);
+				for(let i = 0; i < longlength; i++) {
+					if(i < shortlength) {
 						sum = (+arr1[i]) + (+arr2[i]);
 						console.log(sum)
 						if(sum >= 10) {
@@ -32,7 +34,7 @@
 						}
 					}
 				}
-				console.log(addArr)
+//				console.log(addArr)
 				return addArr[addArr.length - 1] === 0 ? addArr.slice(0, addArr.length - 1).reverse().join('') : addArr.reverse().join('')
 //				return addArr.splice(addArr.length - 1, 1)
 			}
